@@ -1,3 +1,4 @@
+# Crea la api para poder hacer que se mueva por web
 from flask import Flask, jsonify
 import subprocess
 from alante import mover_servos, parar

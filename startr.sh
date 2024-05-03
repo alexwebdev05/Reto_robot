@@ -1,5 +1,6 @@
 #!/bin/bash
 sleep 5
+# Este sctript era para que se ejecutase todo al encender la raspberri pero no funciona bien la del server
 
 #
 /usr/bin/node /home/pi/pagina/serverReto/app.js >/dev/null 2>&1 &

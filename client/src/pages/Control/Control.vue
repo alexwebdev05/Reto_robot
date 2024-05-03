@@ -10,6 +10,7 @@ export default {
             imageUrl: 'http://192.168.0.101:5500/last_image.jpg'
         }
     },
+    // Estos son los componentes (botones personalizados)
     name: 'Control',
     components: {
         Arrows: Arrows,

@@ -1,3 +1,4 @@
+// Este archivo exporta todos los componentes al mismo tiempo para una buena organización
 import Home from './Home/Home.vue'
 import Control from './Control/Control.vue'
 import Temperaturas from './Temperaturas/Temperaturas.vue'

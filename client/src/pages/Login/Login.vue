@@ -13,6 +13,7 @@ export default {
     }
   },
   methods: {
+    // Method para enviar los datos
     enviarDatos() {
       axios.post('http://localhost:8000/api/users/login', JSON.stringify(this.usuario), {
         headers: {
@@ -48,7 +49,10 @@ export default {
 
     <!-- Menu -->
     <section>
+    <!-- Sale si la contraseña o el usuario estan mal -->
         <h2 v-if="!register">Usuario o contraseña incorrecto</h2>
+
+        <!-- este es el formulario para iniciar sesion  -->
         <form @submit.prevent="login">
             <label><h2>Usuario</h2><input v-model="usuario.usuario" type="text"></label>
             <label><h2>Contraseña</h2><input v-model="usuario.contraseña" type="text"></label>

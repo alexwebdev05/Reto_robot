@@ -1,3 +1,4 @@
+# Este archivo hace dos funciones las cuales hacen que el perro se mueva o se pare
 from gpiozero import AngularServo
 from gpiozero.pins.pigpio import PiGPIOFactory
 from time import sleep

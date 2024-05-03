@@ -1,7 +1,10 @@
 <script setup>
 import { onMounted, ref } from "vue";
+
+// funcion para goger las temperaturas
 import useTemperatura from "../../api/temperaturasApi"
 
+// Esto se utiliza en el html para mostrar las temperaturas. Las temperaturas estan dentro de temperaturaData
 const { temperaturaData, error, getAllTemperatura } = useTemperatura();
 onMounted(getAllTemperatura);
 

@@ -1,4 +1,5 @@
 <script>
+// libreria par converit xml en js
 import X2JS from 'x2js'
 
 export default {
@@ -19,11 +20,14 @@ export default {
       };
       reader.readAsText(files[0]);
     },
+    // funcion que convierte el archivo
     convertToJSON() {
       let x2js = new X2JS();
       let jsonObj = x2js.xml2js(this.xmlData);
       this.jsonOutput = JSON.stringify(jsonObj, null, 2);
     },
+
+    // Funcion para descargar el json
     downloadJSON() {
       let blob = new Blob([this.jsonOutput], {type: "application/json"});
       let link = document.createElement('a');

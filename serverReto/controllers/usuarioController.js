@@ -20,7 +20,7 @@ router.post('/registro', (req, res) => {
         })
     }
 
-    // Add return here
+    // comprueba si el usuario existe
     return User.findOne({
         usuario: usuario
     }).then(user => {
@@ -36,8 +36,9 @@ router.post('/registro', (req, res) => {
             contraseña
         })
 
+        // Encripta la contraseña
         bcrypt.genSalt(10, (err, salt) => {
-            bcrypt.hash(newUser.contraseña, salt, (err, hash) => {
+            bcrypt.hash(newUser.contraseña, salt, (err, hash) => { // Si te fijas en esta linea aplica la sal
                 if (err) throw err
                 newUser.contraseña = hash
                 newUser.save().then(user => {
@@ -63,6 +64,8 @@ router.post('/login', (req, res) => {
                 success: false
             })
         }
+
+        // Encripta la contraseña y la compara
         bcrypt.compare(req.body.contraseña, user.contraseña).then(isMatch => {
             if (isMatch) {
                 const payload = {
@@ -70,6 +73,8 @@ router.post('/login', (req, res) => {
                     usuario: user.usuario,
                     contraseña: user.contraseña
                 }
+
+                // Asigna un token
                 jwt.sign(payload, secret, {
                     expiresIn: 604800
                 }, (err, token) => {

@@ -4,6 +4,7 @@ import axios from 'axios';
 
 export default {
   data() {
+    // contenido a insertar en la db
     return {
       usuario: {
         email: "",
@@ -15,6 +16,7 @@ export default {
     }
   },
   methods: {
+    // funcion para meter los datos en la base de datos
     enviarDatos() {
       axios.post('http://localhost:8000/api/users/registro', JSON.stringify(this.usuario), {
         headers: {

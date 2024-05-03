@@ -1,3 +1,4 @@
+// Este archivo exporta una funcion la cual se utiliza para sacar todas las temperaturas
 import{ ref } from 'vue'
 import axios from 'axios'
 

@@ -15,6 +15,7 @@ export default {
         }
     },
     methods: {
+        // Esto somplemente hace unos console log que hice para ver si funcionaba bien
         movement(direction) {
             let button = document.getElementById(direction)
             button.style.backgroundColor = 'rgb(80, 80, 80)'
@@ -48,7 +49,7 @@ export default {
             
         },
         stop(direction) {
-            // Llama al método para ejecutar el script
+            // Llama al método para parar el script
             fetch('http://localhost:5000/parar')
                 .then(response => response.json())
                 .then(data => {
